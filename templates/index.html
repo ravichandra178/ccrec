@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    
+    <div class="form-group col-md-12 mb-0">
+    {{ form|crispy }}
+    </div>
+    <input class="btn btn-outline-success" type="Submit" name="submit" value="Submit"/>
+  </form>
+
+{% if submitbutton == "Submit" %} 
+<p> Array {{ inp_arr }}</p>
+<p> Output {{ output }}</p>
+
+{% endif %}
+{% for i in output %}
+{% if i == 1 %}
+<h3 style="color:green">Yes</h3>
+{% else %}
+<h3 style="color:red">No</h3>
+{% endif %}
+{% endfor %}
+
+</body>
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'}),_trfd.push({'ap':'cpsh'},{'server':'p3plcpnl0769'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script><script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'}),_trfd.push({'ap':'cpsh'},{'server':'p3plcpnl0769'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script>
+{% endblock %}
